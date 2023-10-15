@@ -7,6 +7,15 @@ const Navbar = () => {
   const [navbarExpand, setNavbarExpand] = useState(false);
   const [bodyScroll, setBodyScroll] = useState(true);
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+  const [selectedLink, setSelectedLink] = useState(null);
+
+  const handleMouseEnter = (index) => {
+    setSelectedLink(index);
+  };
+
+  const handleMouseLeave = () => {
+    setSelectedLink(null); // Reset selected link when mouse leaves the navbar
+  };
 
   // Check the viewport
   useEffect(() => {
@@ -34,12 +43,47 @@ const Navbar = () => {
 
   return (
     <div className='navbar-container'>
-      <p className='navbar-title'>Toz Game</p>
-      <div className='links-container'>
-        <Link className='navbar-link' to="/" onClik="">Classic</Link>
-        <Link className='navbar-link' to="/" onClik="">About</Link>
-        <Link className='navbar-link' to="/" onClik="">Parameters</Link>
+      <p className='navbar-title'>room</p>
+        <div className='links-container'>
+          <Link
+            className={`navbar-link ${selectedLink === 0 ? 'selected' : ''}`}
+            to="/"
+            onMouseEnter={() => handleMouseEnter(0)}
+            onMouseLeave={handleMouseLeave}
+          >
+            home
+            <div className={`selector ${selectedLink === 0 ? 'selected' : ''}`}></div>
+          </Link>
 
+          <Link
+            className={`navbar-link ${selectedLink === 1 ? 'selected' : ''}`}
+            to="/shop"
+            onMouseEnter={() => handleMouseEnter(1)}
+            onMouseLeave={handleMouseLeave}
+          >
+            shop
+            <div className={`selector ${selectedLink === 1 ? 'selected' : ''}`}></div>
+          </Link>
+
+          <Link
+            className={`navbar-link ${selectedLink === 2 ? 'selected' : ''}`}
+            to="/about"
+            onMouseEnter={() => handleMouseEnter(2)}
+            onMouseLeave={handleMouseLeave}
+          >
+            about
+            <div className={`selector ${selectedLink === 2 ? 'selected' : ''}`}></div>
+          </Link>
+
+          <Link
+            className={`navbar-link ${selectedLink === 3 ? 'selected' : ''}`}
+            to="/contact"
+            onMouseEnter={() => handleMouseEnter(3)}
+            onMouseLeave={handleMouseLeave}
+          >
+            contact
+            <div className={`selector ${selectedLink === 3 ? 'selected' : ''}`}></div>
+          </Link>
       </div>
     </div>
   )

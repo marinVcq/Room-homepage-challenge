@@ -32,17 +32,21 @@ const Home = () => {
 
           <div className='top-right-container'>
 
-            <h1 className='page-title'>Discover innovative ways to decorate</h1>
+            <div className='text-container'>
+              
+              <h1 className='page-title'>Discover innovative ways to decorate</h1>
 
-            <p className='page-description'>
-              We provide unmatched quality, comfort, and style for property owners across the country. Our experts combine form and function in bringing 
-              your vision to life. Create a room in your own style with our collection and make your property a reflection of you and what you love.
-            </p>
+              <p className='page-description'>
+                We provide unmatched quality, comfort, and style for property owners across the country. Our experts combine form and function in bringing 
+                your vision to life. Create a room in your own style with our collection and make your property a reflection of you and what you love.
+              </p>
 
-            <Link className='shop-link' to='#'>
-              <p>Shop now</p>
-              <img className='link-img' alt='arrow' src={ArrowIcon}></img>
-            </Link>
+              <Link className='shop-link' to='#'>
+                <p>Shop now</p>
+                <img className='link-img' alt='arrow' src={ArrowIcon}></img>
+              </Link>
+            </div>
+
 
           </div>
         </section>
@@ -52,7 +56,16 @@ const Home = () => {
             <img className='bottom-left-image' src={ImageDark}></img>
           </div>
           
-          <div className='bottom-center-container'></div>
+          <div className='bottom-center-container'>
+
+            <div className='bottom-text-container'>
+              <h1 className='bottom-text-title'>About our furniture</h1>
+              <p className='bottom-text-description'>
+                Our multifunctional collection blends design and function to suit your individual taste. Make each room unique, or pick a cohesive theme that best express your interests and what inspires you. Find the furniture pieces you need, 
+                from traditional to contemporary styles or anything in between. Product specialists are available to help you create your dream space.
+              </p>
+            </div>
+          </div>
 
           <div className='bottom-right-container'>
             <img className='bottom-right-image' src={ImageLight}></img>

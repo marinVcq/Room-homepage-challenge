@@ -20,12 +20,13 @@
                 @include width-height(100%,100%)
                 object-fit: cover
         .btn-container
-            @include width-height(18rem, 8.5rem)
+            @include width-height(12%, 8rem)
             @include flexbox(row, space-between, center)
             background-color: $black
             position: absolute
             top: 100%
-            right: 52rem
+            // right: 52rem
+            right: 30%
             transform: translateY(-100%)
 
             .btn
@@ -44,25 +45,37 @@
 
         // TOP RIGHT TEXT CONTAINER
         .top-right-container
-            @include flexbox(column,flex-start ,flex-start,2.6rem)
-            @include width-height(70rem, 100%)
+            @include flexbox(row, center,flex-start)
+            @include width-height(42%, 100%)
             background-color: white
-            padding: 8rem 9rem 10rem 10rem
+            padding: 6rem 2rem 0 2rem
 
-            .page-title
-                @include set-font($black, 'League Spartan', 4.8rem, 700, normal)
-            .page-description
-                @include set-font($darkGray, 'League Spartan', 1.6rem, 500, normal)
-                line-height: 2.5rem
 
-            .shop-link
-                @include flexbox(row, space-between, center, 3rem)
-                text-transform: uppercase
-                @include set-font($black, 'League Spartan', 2.2rem, 600, normal)
-                letter-spacing: 1.6rem
-                p
-                    @include width-height(100%,100%)
-                    @include flexbox(row, center, center)
+
+            .text-container
+                @include flexbox(column,flex-start ,flex-start,1.8rem)
+                max-width: 45rem
+                // padding: 8rem 9rem 10rem 10rem
+
+                .page-title
+                    @include set-font($black, 'League Spartan', 4.2rem, 700, normal)
+                .page-description
+                    @include set-font($darkGray, 'League Spartan', 1.6rem, 500, normal)
+                    line-height: 2.5rem
+
+                .shop-link
+                    @include flexbox(row, space-between, center, 3rem)
+                    text-transform: uppercase
+                    @include set-font($black, 'League Spartan', 1.6rem, 600, normal)
+                    letter-spacing: 1.4rem
+
+                    p
+                        @include width-height(100%,100%)
+                        @include flexbox(row, center, center)
+                        cursor: pointer
+                        transition: color 0.2s linear
+                        &:hover
+                            color: $darkGray
 
     // BOTTOM CONTAINER 
     .bottom-container
@@ -81,7 +94,8 @@
 
         .bottom-right-container
             overflow: hidden
-            width: 52rem
+            // width: 52rem
+            width: 30%
             height: 100%
             position: relative
             top:0
@@ -93,7 +107,30 @@
 
         .bottom-center-container
             height: 100%
-            background-color: blue
+            width: 40%
+            background-color: white
+            @include flexbox(row,center, center)
+            padding: 5rem
+
+            .bottom-text-container
+                @include flexbox(column, flex-start, flex-start, 1.6rem)
+
+
+                .bottom-text-title
+                    @include set-font($black, 'League Spartan', 1.8rem, 700, normal)
+                    text-transform: uppercase
+                    letter-spacing: 0.6rem
+
+                .bottom-text-description
+                    @include set-font($darkGray, 'League Spartan', 1.6rem, 500, normal)
+                    line-height: 2.2rem
+// TABLET DESIGN
+
+@include respond(tablet)
+    .top-container
+        @include flexbox(column, flex-start, space-between)
+
+
 
 
 
