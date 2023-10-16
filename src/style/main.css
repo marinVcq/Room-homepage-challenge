@@ -103,6 +103,7 @@ h2 {
   top: 36rem;
   right: 0;
   transform: translateY(-100%);
+  z-index: 10;
 }
 .page-container .top-container .btn-container .btn {
   width: 50%;
@@ -130,7 +131,7 @@ h2 {
   justify-content: center;
   align-items: center;
   gap: 0;
-  padding: 3rem;
+  padding: 6rem 3rem;
 }
 .page-container .top-container .top-right-container .text-container {
   display: flex;
@@ -145,6 +146,7 @@ h2 {
   font-weight: 700;
   font-size: 3.2rem;
   font-style: normal;
+  transition: all 0.2s linear;
 }
 .page-container .top-container .top-right-container .text-container .page-description {
   color: hsl(0, 0%, 63%);
@@ -153,6 +155,7 @@ h2 {
   font-size: 1.6rem;
   font-style: normal;
   line-height: 2rem;
+  transition: all 0.2s linear;
 }
 .page-container .top-container .top-right-container .text-container .shop-link {
   display: flex;
@@ -299,7 +302,7 @@ h2 {
     width: 40%;
     height: 100%;
     background-color: white;
-    padding: 6rem 7rem 0 7rem;
+    padding: 8rem 2rem 0 2rem;
   }
   .page-container .top-container .top-right-container .text-container {
     display: flex;
@@ -422,20 +425,46 @@ h2 {
 }
 .navbar-container {
   width: 100%;
-  height: 7rem;
+  height: 8rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 5rem;
   z-index: 10;
-  background-color: transparent;
-  padding: 5.5rem 0 2rem 7rem;
+  padding: 2rem 0 0 2rem;
+}
+.navbar-container .bg-overlayer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  transition: all 0.3s linear;
+  opacity: 0;
+  z-index: -1;
+}
+.navbar-container .bg-overlayer.expand {
+  opacity: 1;
+}
+.navbar-container .burger-btn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 50%;
+  left: 3rem;
+  width: 3rem;
+  height: 2rem;
 }
 .navbar-container .navbar-title {
   color: hsl(0, 0%, 100%);
@@ -445,31 +474,100 @@ h2 {
   font-style: normal;
 }
 .navbar-container .links-container {
+  width: 100%;
+  height: 11rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
-  gap: 4rem;
+  gap: 2.7rem;
+  background-color: white;
+  padding: 0 2rem 0 6rem;
+  transition: all 0.3s linear;
+  top: -11rem;
 }
 .navbar-container .links-container .navbar-link {
-  color: hsl(0, 0%, 100%);
+  color: hsl(0, 0%, 0%);
   font-family: "League Spartan";
-  font-weight: 500;
-  font-size: 2rem;
+  font-weight: 700;
+  font-size: 1.6rem;
   font-style: normal;
-  cursor: pointer;
-  position: relative;
 }
-.navbar-container .links-container .navbar-link .selector {
-  width: 80%;
-  height: 0.3rem;
-  background-color: white;
-  position: absolute;
-  top: 130%;
-  right: 0;
-  transition: all 0.2s linear;
-  opacity: 0;
+.navbar-container .links-container .close-btn {
+  margin-right: 4rem;
 }
-.navbar-container .links-container .navbar-link .selector.selected {
-  opacity: 1;
+.navbar-container .links-container.expand {
+  top: 0;
+}
+
+@media only screen and (min-width: 1025px) {
+  .navbar-container {
+    width: 100%;
+    height: 7rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5rem;
+    background-color: transparent;
+    padding: 5.5rem 0 2rem 7rem;
+  }
+  .navbar-container .burger-btn {
+    display: none;
+  }
+  .navbar-container .bg-overlayer {
+    display: none;
+  }
+  .navbar-container .navbar-title {
+    color: hsl(0, 0%, 100%);
+    font-family: "League Spartan";
+    font-weight: 500;
+    font-size: 3.4rem;
+    font-style: normal;
+  }
+  .navbar-container .links-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 4rem;
+    position: unset;
+    background: transparent;
+    padding: 0;
+  }
+  .navbar-container .links-container .close-btn {
+    display: none;
+  }
+  .navbar-container .links-container .navbar-link {
+    color: hsl(0, 0%, 100%);
+    font-family: "League Spartan";
+    font-weight: 500;
+    font-size: 2rem;
+    font-style: normal;
+    cursor: pointer;
+    position: relative;
+  }
+  .navbar-container .links-container .navbar-link .selector {
+    width: 80%;
+    height: 0.3rem;
+    background-color: white;
+    position: absolute;
+    top: 130%;
+    right: 0;
+    transition: all 0.2s linear;
+    opacity: 0;
+  }
+  .navbar-container .links-container .navbar-link .selector.selected {
+    opacity: 1;
+  }
 }/*# sourceMappingURL=main.css.map */

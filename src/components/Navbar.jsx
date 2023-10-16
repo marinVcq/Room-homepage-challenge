@@ -1,6 +1,10 @@
 import React, {useState, useEffect, useContext} from 'react'
 import { Link, useLocation } from "react-router-dom";
 
+// Import assets
+import BurgerIcon from '../images/icon-hamburger.svg'
+import CrossIcon from '../images/icon-close.svg'
+
 const Navbar = () => {
 
   const location = useLocation();
@@ -43,8 +47,13 @@ const Navbar = () => {
 
   return (
     <div className='navbar-container'>
+      <div className={`bg-overlayer ${navbarExpand ? 'expand' : ''}`}></div>
+      <img className='burger-btn' alt='burger-btn' src={BurgerIcon} onClick={handleToggle}></img>
       <p className='navbar-title'>room</p>
-        <div className='links-container'>
+
+        <div className={`links-container ${navbarExpand ? 'expand' : ''}`}>
+          <img className='close-btn' alt='close-btn' src={CrossIcon} onClick={handleToggle}></img>
+          
           <Link
             className={`navbar-link ${selectedLink === 0 ? 'selected' : ''}`}
             to="/"

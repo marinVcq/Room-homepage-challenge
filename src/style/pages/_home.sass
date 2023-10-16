@@ -25,6 +25,7 @@
             top: 36rem
             right: 0
             transform: translateY(-100%)
+            z-index: 10
 
             .btn
                 @include width-height(50%,100%)
@@ -41,16 +42,20 @@
         .top-right-container
             @include width-height(100%,100%)
             @include flexbox(row, center, center)
-            padding: 3rem
+            padding: 6rem 3rem
 
             .text-container
                 @include flexbox(column, flex-start, flex-start, 2rem)
 
                 .page-title
                     @include set-font($black, "League Spartan", 3.2rem, 700, normal)
+                    transition: all 0.2s linear
+
                 .page-description
                     @include set-font($darkGray, "League Spartan", 1.6rem, 500, normal)
                     line-height: 2rem
+                    transition: all 0.2s linear
+
 
                 .shop-link
                     @include flexbox(row, space-between, center, 1.6rem)
@@ -137,7 +142,7 @@
                 @include flexbox(row, center,flex-start)
                 @include width-height(40%, 100%)
                 background-color: white
-                padding: 6rem 7rem 0 7rem
+                padding: 8rem 2rem 0 2rem
 
 
 
