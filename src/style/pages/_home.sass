@@ -1,32 +1,29 @@
 .page-container
-    @include width-height(100%,100vh)
+    @include width-height(100%,100%)
     @include flexbox(column, flex-start, space-between)
-    background-color: white
     min-height: 100vh
 
+    // FIRST SECTION (hero image & text)
     .top-container
-        @include flexbox(row, space-between, flex-start)
-        @include width-height(100%,auto)
-        height: 65%
+        @include width-height(100%,100%)
+        @include flexbox(column, flex-start, space-between)
         position: relative
 
-        // TOP LEFT IMAGE
+        // HERO IMAGE
         .top-left-container
-            flex: 1
-            @include width-height(100%,100%)
-            background-color: red
-
-            .top-left-image 
+            @include width-height(100%, 36rem)
+            img
                 @include width-height(100%,100%)
                 object-fit: cover
+            
+        // BUTTON LEFT RIGHT
         .btn-container
-            @include width-height(12%, 8rem)
+            @include width-height(10rem, 5rem)
             @include flexbox(row, space-between, center)
             background-color: $black
             position: absolute
-            top: 100%
-            // right: 52rem
-            right: 30%
+            top: 36rem
+            right: 0
             transform: translateY(-100%)
 
             .btn
@@ -39,35 +36,27 @@
 
                 img
                     @include width-height(2rem, auto)
-                    
 
-                // @include width-height(50%, 100%)
-
-        // TOP RIGHT TEXT CONTAINER
+        // TEXT CONTAINER
         .top-right-container
-            @include flexbox(row, center,flex-start)
-            @include width-height(42%, 100%)
-            background-color: white
-            padding: 6rem 2rem 0 2rem
-
-
+            @include width-height(100%,100%)
+            @include flexbox(row, center, center)
+            padding: 3rem
 
             .text-container
-                @include flexbox(column,flex-start ,flex-start,1.8rem)
-                max-width: 45rem
-                // padding: 8rem 9rem 10rem 10rem
+                @include flexbox(column, flex-start, flex-start, 2rem)
 
                 .page-title
-                    @include set-font($black, 'League Spartan', 4.2rem, 700, normal)
+                    @include set-font($black, "League Spartan", 3.2rem, 700, normal)
                 .page-description
-                    @include set-font($darkGray, 'League Spartan', 1.6rem, 500, normal)
-                    line-height: 2.5rem
+                    @include set-font($darkGray, "League Spartan", 1.6rem, 500, normal)
+                    line-height: 2rem
 
                 .shop-link
-                    @include flexbox(row, space-between, center, 3rem)
+                    @include flexbox(row, space-between, center, 1.6rem)
                     text-transform: uppercase
-                    @include set-font($black, 'League Spartan', 1.6rem, 600, normal)
-                    letter-spacing: 1.4rem
+                    @include set-font($black, 'League Spartan', 1.6rem, 700, normal)
+                    letter-spacing: 1rem
 
                     p
                         @include width-height(100%,100%)
@@ -76,59 +65,157 @@
                         transition: color 0.2s linear
                         &:hover
                             color: $darkGray
-
-    // BOTTOM CONTAINER 
+    
+    // BOTTOM CONTAINER
     .bottom-container
-        width: 100%
-        height: 35%
-        @include flexbox(row, space-between, flex-start)
-        // position: relative
-        
+        @include width-height(100%,100%)
+        @include flexbox(column, flex-start, space-between)
+
+        // DARK IMAGE
         .bottom-left-container
-            width: 30%
-            height: 100%
-            overflow: hidden
+            @include width-height(100%,100%)
             .bottom-left-image
-                object-fit: cover
                 @include width-height(100%,100%)
-
-        .bottom-right-container
-            overflow: hidden
-            // width: 52rem
-            width: 30%
-            height: 100%
-            position: relative
-            top:0
-            right: 0
-            background-color: green
-            .bottom-right-image
                 object-fit: cover
-                @include width-height(100%,100%)
-
+        
+        // CENTER TEXT
         .bottom-center-container
-            height: 100%
-            width: 40%
-            background-color: white
-            @include flexbox(row,center, center)
-            padding: 5rem
-
+            @include flexbox(column, flex-start, flex-start, 2rem)
+            padding: 3rem
             .bottom-text-container
-                @include flexbox(column, flex-start, flex-start, 1.6rem)
-
+                @include flexbox(column, flex-start, flex-start, 2rem)
 
                 .bottom-text-title
-                    @include set-font($black, 'League Spartan', 1.8rem, 700, normal)
+                    @include set-font($black, 'League Spartan', 1.6rem, 700, normal)
                     text-transform: uppercase
-                    letter-spacing: 0.6rem
+                    letter-spacing: 0.5rem
 
                 .bottom-text-description
                     @include set-font($darkGray, 'League Spartan', 1.6rem, 500, normal)
-                    line-height: 2.2rem
-// TABLET DESIGN
+                    line-height: 2rem
+        // LIGHT IMAGE
+        .bottom-right-container
+            @include width-height(100%,100%)
+            .bottom-right-image
+                @include width-height(100%,100%)
+                object-fit: cover
 
-@include respond(tablet)
-    .top-container
+// DESKTOP
+@include respond(desktop)
+    .page-container
+        @include width-height(100%,100vh)
         @include flexbox(column, flex-start, space-between)
+        background-color: white
+        min-height: 100vh
+
+        .top-container
+            @include flexbox(row, space-between, flex-start)
+            @include width-height(100%,auto)
+            height: 65%
+
+            // TOP LEFT IMAGE
+            .top-left-container
+                flex: 1
+                @include width-height(60%,100%)
+
+                .top-left-image 
+                    @include width-height(100%,100%)
+                    object-fit: cover
+
+            // BUTTON LEFT RIGHT
+            .btn-container
+                @include width-height(10%, 8rem)
+                @include flexbox(row, space-between, center)
+                background-color: $black
+                right: 40%
+                top: 100%
+                transform: translate(100%,-100%)
+
+
+            // TOP RIGHT TEXT CONTAINER
+            .top-right-container
+                @include flexbox(row, center,flex-start)
+                @include width-height(40%, 100%)
+                background-color: white
+                padding: 6rem 7rem 0 7rem
+
+
+
+                .text-container
+                    @include flexbox(column,flex-start ,flex-start,1.8rem)
+                    max-width: 45rem
+                    // padding: 8rem 9rem 10rem 10rem
+
+                    .page-title
+                        @include set-font($black, 'League Spartan', 4.2rem, 700, normal)
+                    .page-description
+                        @include set-font($darkGray, 'League Spartan', 1.6rem, 500, normal)
+                        line-height: 2.5rem
+
+                    .shop-link
+                        @include flexbox(row, space-between, center, 3rem)
+                        text-transform: uppercase
+                        @include set-font($black, 'League Spartan', 1.6rem, 700, normal)
+                        letter-spacing: 1.4rem
+
+                        p
+                            @include width-height(100%,100%)
+                            @include flexbox(row, center, center)
+                            cursor: pointer
+                            transition: color 0.2s linear
+                            &:hover
+                                color: $darkGray
+
+        // BOTTOM CONTAINER 
+        .bottom-container
+            width: 100%
+            height: 35%
+            @include flexbox(row, space-between, flex-start)
+            // position: relative
+            
+            .bottom-left-container
+                width: 30%
+                height: 100%
+                overflow: hidden
+                .bottom-left-image
+                    object-fit: cover
+                    @include width-height(100%,100%)
+
+            .bottom-right-container
+                overflow: hidden
+                width: 30%
+                height: 100%
+                background-color: green
+                .bottom-right-image
+                    object-fit: cover
+                    @include width-height(100%,100%)
+
+            .bottom-center-container
+                height: 100%
+                width: 40%
+                background-color: white
+                @include flexbox(row,center, center)
+                padding: 5rem
+
+                .bottom-text-container
+                    @include flexbox(column, flex-start, flex-start, 1.6rem)
+
+
+                    .bottom-text-title
+                        @include set-font($black, 'League Spartan', 1.8rem, 700, normal)
+                        text-transform: uppercase
+                        letter-spacing: 0.6rem
+
+                    .bottom-text-description
+                        @include set-font($darkGray, 'League Spartan', 1.6rem, 500, normal)
+                        line-height: 2.2rem
+
+
+
+                
+
+
+
 
 
 

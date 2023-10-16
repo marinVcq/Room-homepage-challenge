@@ -6,6 +6,9 @@ import { Link } from 'react-router-dom'
 import DesktopHero1 from '../images/desktop-image-hero-1.jpg'
 import DesktopHero2 from '../images/desktop-image-hero-2.jpg'
 import DesktopHero3 from '../images/desktop-image-hero-3.jpg'
+
+import MobileHero1 from '../images/mobile-image-hero-1.jpg'
+
 import ImageDark from '../images/image-about-dark.jpg'
 import ImageLight from '../images/image-about-light.jpg'
 
@@ -15,19 +18,33 @@ import AngleLeft from '../images/icon-angle-left.svg'
 import AngleRight from '../images/icon-angle-right.svg'
 
 
+
+
 const Home = () => {
+
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+
+  // Check the viewport
+  useEffect(() => {
+
+    const changeWidth = () => {
+      setScreenWidth(window.innerWidth);
+    }
+    window.addEventListener('resize', changeWidth)
+
+  }, [])
 
   return (
       <div className='page-container'>
 
         <section className='top-container'>
           <div className='top-left-container'>
-            <img className='top-left-image' src={DesktopHero1}></img>
+            <img className='top-left-image' src={screenWidth > 1025 ? DesktopHero1 : MobileHero1}></img>
           </div>
 
           <div className='btn-container'>
-            <div className='btn'><img src={AngleLeft} alt="left-btn"></img></div>
-            <div className='btn'><img src={AngleRight} alt="left-btn"></img></div>
+              <div className='btn'><img src={AngleLeft} alt="left-btn"></img></div>
+              <div className='btn'><img src={AngleRight} alt="right-btn"></img></div>
           </div>
 
           <div className='top-right-container'>
