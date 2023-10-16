@@ -105,7 +105,7 @@ h2 {
   top: 50%;
   right: 0;
   transform: translateY(-100%);
-  z-index: 9;
+  z-index: 10;
 }
 .page-container .top-container .btn-container .btn {
   width: 50%;
@@ -124,6 +124,7 @@ h2 {
 .page-container .top-container .btn-container .btn img {
   width: 2rem;
   height: auto;
+  cursor: pointer;
 }
 .page-container .top-container .top-right-container {
   width: 100%;
