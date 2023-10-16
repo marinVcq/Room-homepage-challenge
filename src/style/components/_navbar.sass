@@ -27,17 +27,19 @@
     .links-container
         @include width-height(100%, 11rem)
         @include set-position(absolute, 0,0)
-        @include flexbox(row, flex-end, center,2.7rem)
+        @include flexbox(row, space-between, center,2.7rem)
         background-color: white
-        padding: 0 2rem 0 6rem
-        transition: all 0.3s linear
+        transition: all 0.2s ease
         top: -11rem
-        .navbar-link
-            @include set-font($black, "League Spartan", 1.6rem,700, normal)
-        .close-btn
-            margin-right: 4rem
+        padding: 0 2.5rem 0 2.5rem
         &.expand
             top: 0
+        div
+            @include flexbox(row, space-between, center,2.5rem)
+            .navbar-link
+                @include set-font($black, "League Spartan", 1.6rem,700, normal)
+            .close-btn
+
 
 // DESKTOP DESIGN
 @include respond(desktop)
@@ -61,23 +63,26 @@
             position: unset
             background: transparent
             padding: 0
+            
 
             .close-btn
                 display: none
 
-            .navbar-link
-                @include set-font($white, "League Spartan", 2rem,500, normal)
-                cursor: pointer
-                position: relative
+            div
 
-                .selector
-                    @include width-height(80%, 0.3rem)
-                    background-color: white
-                    position: absolute
-                    top: 130%
-                    right: 0
-                    transition: all 0.2s linear
-                    opacity: 0
+                .navbar-link
+                    @include set-font($white, "League Spartan", 2rem,500, normal)
+                    cursor: pointer
+                    position: relative
 
-                    &.selected
-                        opacity: 1
+                    .selector
+                        @include width-height(80%, 0.3rem)
+                        background-color: white
+                        position: absolute
+                        top: 130%
+                        right: 0
+                        transition: all 0.2s linear
+                        opacity: 0
+
+                        &.selected
+                            opacity: 1

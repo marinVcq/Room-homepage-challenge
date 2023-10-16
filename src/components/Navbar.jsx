@@ -53,46 +53,48 @@ const Navbar = () => {
 
         <div className={`links-container ${navbarExpand ? 'expand' : ''}`}>
           <img className='close-btn' alt='close-btn' src={CrossIcon} onClick={handleToggle}></img>
-          
-          <Link
-            className={`navbar-link ${selectedLink === 0 ? 'selected' : ''}`}
-            to="/"
-            onMouseEnter={() => handleMouseEnter(0)}
-            onMouseLeave={handleMouseLeave}
-          >
-            home
-            <div className={`selector ${selectedLink === 0 ? 'selected' : ''}`}></div>
-          </Link>
+          <div>
+            <Link
+              className={`navbar-link ${selectedLink === 0 ? 'selected' : ''}`}
+              to="/"
+              onMouseEnter={() => handleMouseEnter(0)}
+              onMouseLeave={handleMouseLeave}
+            >
+              home
+              <div className={`selector ${selectedLink === 0 ? 'selected' : ''}`}></div>
+            </Link>
 
-          <Link
-            className={`navbar-link ${selectedLink === 1 ? 'selected' : ''}`}
-            to="/shop"
-            onMouseEnter={() => handleMouseEnter(1)}
-            onMouseLeave={handleMouseLeave}
-          >
-            shop
-            <div className={`selector ${selectedLink === 1 ? 'selected' : ''}`}></div>
-          </Link>
+            <Link
+              className={`navbar-link ${selectedLink === 1 ? 'selected' : ''}`}
+              to="/shop"
+              onMouseEnter={() => handleMouseEnter(1)}
+              onMouseLeave={handleMouseLeave}
+            >
+              shop
+              <div className={`selector ${selectedLink === 1 ? 'selected' : ''}`}></div>
+            </Link>
 
-          <Link
-            className={`navbar-link ${selectedLink === 2 ? 'selected' : ''}`}
-            to="/about"
-            onMouseEnter={() => handleMouseEnter(2)}
-            onMouseLeave={handleMouseLeave}
-          >
-            about
-            <div className={`selector ${selectedLink === 2 ? 'selected' : ''}`}></div>
-          </Link>
+            <Link
+              className={`navbar-link ${selectedLink === 2 ? 'selected' : ''}`}
+              to="/about"
+              onMouseEnter={() => handleMouseEnter(2)}
+              onMouseLeave={handleMouseLeave}
+            >
+              about
+              <div className={`selector ${selectedLink === 2 ? 'selected' : ''}`}></div>
+            </Link>
 
-          <Link
-            className={`navbar-link ${selectedLink === 3 ? 'selected' : ''}`}
-            to="/contact"
-            onMouseEnter={() => handleMouseEnter(3)}
-            onMouseLeave={handleMouseLeave}
-          >
-            contact
-            <div className={`selector ${selectedLink === 3 ? 'selected' : ''}`}></div>
-          </Link>
+            <Link
+              className={`navbar-link ${selectedLink === 3 ? 'selected' : ''}`}
+              to="/contact"
+              onMouseEnter={() => handleMouseEnter(3)}
+              onMouseLeave={handleMouseLeave}
+            >
+              contact
+              <div className={`selector ${selectedLink === 3 ? 'selected' : ''}`}></div>
+            </Link>            
+          </div>
+
       </div>
     </div>
   )
