@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "./static/css/main.4d0df73b.css",
+    "main.css": "./static/css/main.07d5055a.css",
     "main.js": "./static/js/main.2ea4dee1.js",
     "static/media/desktop-image-hero-1.jpg": "./static/media/desktop-image-hero-1.91901d0d47ea68db9434.jpg",
     "static/media/desktop-image-hero-3.jpg": "./static/media/desktop-image-hero-3.05fd679aa0d31e01c176.jpg",
@@ -15,11 +15,11 @@
     "static/media/icon-hamburger.svg": "./static/media/icon-hamburger.dc022bac537a273572af58dec556ed7e.svg",
     "static/media/icon-angle-left.svg": "./static/media/icon-angle-left.d53877dfd9c6774a68749ad0239b4ce1.svg",
     "static/media/icon-angle-right.svg": "./static/media/icon-angle-right.0ed3f81fbd14b3bd61d875b7df144e4c.svg",
-    "main.4d0df73b.css.map": "./static/css/main.4d0df73b.css.map",
+    "main.07d5055a.css.map": "./static/css/main.07d5055a.css.map",
     "main.2ea4dee1.js.map": "./static/js/main.2ea4dee1.js.map"
   },
   "entrypoints": [
-    "static/css/main.4d0df73b.css",
+    "static/css/main.07d5055a.css",
     "static/js/main.2ea4dee1.js"
   ]
 }
